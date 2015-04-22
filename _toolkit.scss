@@ -64,3 +64,9 @@
      -moz-box-sizing: $box-model; // Firefox <= 19
           box-sizing: $box-model;
 }
+
+// Size
+@mixin size($width, $height: $width) {
+      width: $width;
+      height: $height;
+}
