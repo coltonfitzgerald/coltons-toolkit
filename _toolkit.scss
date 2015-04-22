@@ -17,7 +17,6 @@
 }
 
 // center vertically and/or horizontally an absolute positioned element
-
 @mixin center($xy:xy) {
   @if $xy == xy {
     left: 50%;
@@ -37,6 +36,7 @@
     @include transform(translateY(-50%));
   }
 }
+
 // Vertical Align
 @mixin vertical-align($height: 50%) {
   position: relative;
@@ -47,16 +47,20 @@
 }
 
 // Calculate em values
-
 @function em($target, $context: $base__font-size) {
 	@return ($target / $context) * 1em;
 }
 
 // Background Size
-
 @mixin background-size($size: cover) {
 	-webkit-background-size: $size;
 	-moz-background-size: $size;
 	-o-background-size: $size;
 	background-size: $size;
+}
+
+@mixin box-sizing($box-model:border-box) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
 }
